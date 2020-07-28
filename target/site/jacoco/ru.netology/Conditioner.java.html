@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Conditioner.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">statistics</a> &gt; <a href="index.source.html" class="el_package">ru.netology</a> &gt; <span class="el_source">Conditioner.java</span></div><h1>Conditioner.java</h1><pre class="source lang-java linenums">package ru.netology;
+
+<span class="fc" id="L3">public class Conditioner {</span>
+    private String name;
+    private int maxTemperature;
+    private int minTemperature;
+    private int currentTemperature;
+    private boolean on;
+
+
+    public String getName() {
+
+<span class="fc" id="L13">        return name;</span>
+    }
+
+    public void setName(String name) {
+
+<span class="fc" id="L18">        this.name = name;</span>
+<span class="fc" id="L19">    }</span>
+
+    public int getMaxTemperature() {
+
+<span class="fc" id="L23">        return maxTemperature;</span>
+    }
+
+    public void setMaxTemperature(int maxTemperature) {
+
+<span class="fc" id="L28">        this.maxTemperature = maxTemperature;</span>
+<span class="fc" id="L29">    }</span>
+
+    public int getMinTemperature() {
+
+<span class="fc" id="L33">        return minTemperature;</span>
+    }
+
+    public void setMinTemperature(int minTemperature) {
+
+<span class="fc" id="L38">        this.minTemperature = minTemperature;</span>
+<span class="fc" id="L39">    }</span>
+
+    public int getCurrentTemperature() {
+
+<span class="fc" id="L43">        return currentTemperature;</span>
+    }
+
+    public void setCurrentTemperature(int currentTemperature) {
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (currentTemperature &gt; maxTemperature) {</span>
+<span class="fc" id="L48">            this.currentTemperature = maxTemperature;</span>
+<span class="fc" id="L49">            return;</span>
+        }
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (currentTemperature &lt; minTemperature) {</span>
+<span class="fc" id="L52">            this.currentTemperature = minTemperature;</span>
+<span class="fc" id="L53">            return;</span>
+        }
+<span class="fc" id="L55">        this.currentTemperature = currentTemperature;</span>
+<span class="fc" id="L56">    }</span>
+
+    public boolean isOn() {
+
+<span class="nc" id="L60">        return on;</span>
+    }
+
+    public void setOn(boolean on) {
+
+<span class="nc" id="L65">        this.on = on;</span>
+<span class="nc" id="L66">    }</span>
+
+    public void increaseCurrentTemperature() {
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        if (currentTemperature == maxTemperature) {</span>
+<span class="nc" id="L70">            return;</span>
+        }
+<span class="fc" id="L72">        this.currentTemperature++;</span>
+<span class="fc" id="L73">    }</span>
+
+    public void decreaseCurrentTemperature(){
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        if (currentTemperature == minTemperature){</span>
+<span class="nc" id="L77">            return;</span>
+        }
+<span class="fc" id="L79">        this.currentTemperature--;</span>
+<span class="fc" id="L80">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
